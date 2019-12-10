@@ -70,7 +70,7 @@ void loop() {
   unsigned long currentTime = millis();
 
   // Cheese
-  int sliderValue = map(cheeseValue, 0, 1023, 0, 127);
+  int sliderValue = map(cheeseValue, 550, 1023, 0, 127);
   controlChange(0, 12, sliderValue);
 
   // Snare
@@ -85,7 +85,7 @@ void loop() {
   }
 
   // Hat
-  if (!onHat && hatValue > 280 && currentTime - hatTime > debounceDuration) {
+  if (!onHat && hatValue > 160 && currentTime - hatTime > debounceDuration) {
     noteOn(0, 45, 64);
     hatTime = currentTime;
     onHat = true;
